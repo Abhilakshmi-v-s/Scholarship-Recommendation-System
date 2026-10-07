@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - ScholarMatch | SCMS</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #2D5BFF;
+      --primary-dark: #1E3FCC;
+      --secondary: #FF6B9D;
+      --accent: #FFC857;
+      --dark: #0A1628;
+      --text: #1F2937;
+      --text-light: #6B7280;
+      --bg-light: #F9FAFB;
+      --success: #10B981;
+      --error: #EF4444;
+      --warning: #F59E0B;
+      --info: #0EA5E9;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: linear-gradient(135deg, #F0F9FF 0%, #FFF8F0 50%, #FFF0F7 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--dark);
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: white;
+      transform: rotate(-3deg);
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover .logo-icon { transform: rotate(3deg) scale(1.05); }
+
+    .logo-text h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .back-home {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-home:hover { color: var(--primary); }
+
+    /* AUTH */
+    .auth-container {
+      min-height: calc(100vh - 200px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      position: relative;
+    }
+
+    .auth-container::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(45, 91, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .auth-container::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255, 107, 157, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 25s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-20px, 20px) scale(1.05); }
+    }
+
+    .auth-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FORM SIDE */
+    .auth-form-section {
+      padding: 3.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-container h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* FLASH */
+    .alert {
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .alert-success { background: #D1FAE5; color: #065F46; border: 1px solid #10B981; }
+    .alert-error, .alert-danger { background: #FEE2E2; color: #991B1B; border: 1px solid #EF4444; }
+    .alert-warning { background: #FFF7ED; color: #9A3412; border: 1px solid #F59E0B; }
+    .alert-info { background: #E0F2FE; color: #075985; border: 1px solid #0EA5E9; }
+
+    .auth-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .form-group label {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .form-group input, .form-group select {
+      padding: 0.95rem 1.25rem;
+      border: 2px solid #E5E7EB;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(45, 91, 255, 0.1);
+    }
+
+    .form-group input::placeholder { color: #9CA3AF; }
+
+    /* Password row */
+    .pass-row { position: relative; display: flex; align-items: center; }
+    .pass-row input { width: 100%; padding-right: 3.25rem; }
+
+    .toggle-btn {
+      position: absolute;
+      right: 10px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--primary);
+      padding: 6px 8px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .toggle-btn:hover { background: rgba(45, 91, 255, 0.08); }
+
+    /* Strength meter */
+    .strength { display: flex; flex-direction: column; gap: 8px; margin-top: -6px; }
+    .bar { height: 10px; width: 100%; background: #EEF2FF; border: 1px solid #E0E7FF; border-radius: 999px; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0%; background: linear-gradient(135deg, var(--primary), var(--secondary)); transition: width 0.25s ease; }
+    .strength-text { font-size: 0.9rem; color: var(--text-light); font-weight: 600; }
+    .hint { font-size: 0.85rem; color: var(--text-light); }
+
+    .btn-submit {
+      padding: 1.1rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 0.5rem;
+      box-shadow: 0 10px 30px rgba(45, 91, 255, 0.25);
+    }
+
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(45, 91, 255, 0.35); }
+    .btn-submit:active { transform: translateY(0); }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #E5E7EB;
+    }
+
+    .form-footer p { color: var(--text-light); font-size: 0.95rem; }
+    .form-footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .form-footer a:hover { color: var(--primary-dark); }
+
+    /* INFO SIDE */
+    .auth-info-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 3.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-content { position: relative; z-index: 1; color: white; }
+    .info-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      width: 90px; height: 90px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-content h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .features-list { display: flex; flex-direction: column; gap: 1.25rem; }
+    .feature-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+    .feature-item:hover { background: rgba(255, 255, 255, 0.25); transform: translateX(5px); }
+
+    .check-icon {
+      width: 28px; height: 28px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .auth-footer { text-align: center; padding: 2rem; color: var(--text-light); font-size: 0.9rem; }
+
+    @media (max-width: 968px) {
+      .auth-wrapper { grid-template-columns: 1fr; }
+      .auth-info-section { order: -1; padding: 2.5rem 2rem; }
+      .info-content h3 { font-size: 1.6rem; }
+      .features-list { flex-direction: row; flex-wrap: wrap; }
+      .feature-item { flex: 1; min-width: 45%; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-container { padding: 0 1.5rem; }
+      .auth-form-section { padding: 2.5rem 1.5rem; }
+      .form-container h2 { font-size: 2rem; }
+      .feature-item { min-width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="{{ url_for('home') }}" class="logo">
+        <div class="logo-icon">S²</div>
+        <div class="logo-text">
+          <h1>ScholarMatch</h1>
+          <p>SCMS Engineering</p>
+        </div>
+      </a>
+      <a href="{{ url_for('home') }}" class="back-home">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- REGISTER -->
+  <div class="auth-container">
+    <div class="auth-wrapper">
+
+      <!-- Left: Form -->
+      <div class="auth-form-section">
+        <div class="form-container">
+          <h2>Create Account</h2>
+          <p class="subtitle">Register to get AI-powered scholarship recommendations</p>
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+
+          <!-- Key: disable autofill by delaying name assignment -->
+          <form id="registerForm" method="POST" action="{{ url_for('register') }}" autocomplete="off">
+
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autocomplete="off" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email (example: name@gmail.com)"
+                required
+                autocomplete="off"
+                inputmode="email"
+                autocapitalize="none"
+                spellcheck="false"
+                 pattern="^[A-Za-z0-9](?:[A-Za-z0-9._%+-]{0,62}[A-Za-z0-9])?@gmail\.com$"
+                title="Enter a valid email address (example: name@gmail.com)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" required autocomplete="off">
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+
+              <div class="pass-row">
+                <!-- NO name attribute here -->
+                <input
+                  type="password"
+                  id="password"
+                  data-name="password"
+                  placeholder="Create a strong password"
+                  required
+                  autocomplete="new-password"
+                  autocapitalize="none"
+                  spellcheck="false"
+                />
+                <button type="button" class="toggle-btn" id="togglePass">Show</button>
+              </div>
+
+              <div class="strength">
+                <div class="bar">
+                  <div class="bar-fill" id="barFill"></div>
+                </div>
+                <div class="strength-text" id="strengthText">Password strength: —</div>
+                <div class="hint">
+                  Use 8+ chars, include <b>uppercase</b>, <b>lowercase</b>, <b>number</b> & <b>special char</b>.
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirm_password">Confirm Password</label>
+
+              <div class="pass-row">
+                <!-- NO name attribute here -->
+                <input
+                  type="password"
+                  id="confirm_password"
+                  data-name="confirm_password"
+                  placeholder="Re-enter password"
+                  required
+                  autocomplete="new-password"
+                  autocapitalize="none"
+                  spellcheck="false"
+                />
+                <button type="button" class="toggle-btn" id="toggleConfirm">Show</button>
+              </div>
+
+              <div class="hint" id="matchHint" style="margin-top:6px;"></div>
+            </div>
+
+            <button type="submit" class="btn-submit">Register</button>
+          </form>
+
+          <div class="form-footer">
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Info -->
+      <div class="auth-info-section">
+        <div class="info-content">
+          <div class="info-icon">🧠</div>
+          <h3>Secure & Smart Matching</h3>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <span class="check-icon">✓</span>
+              <span>Email format validation</span>
+            </div>
+            <div class="feature-item">
+              <span class="check-icon">✓</span>
+              <span>Strong password protection</span>
+            </div>
+            <div class="feature-item">
+              <span class="check-icon">✓</span>
+              <span>NLP-based scholarship matching</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="auth-footer">
+    <p>&copy; 2026 ScholarMatch - SCMS School of Engineering and Technology</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("registerForm");
+
+    // Inputs
+    const pass = document.getElementById("password");
+    const confirmPass = document.getElementById("confirm_password");
+
+    // Clear any Chrome injected values on load
+    window.addEventListener("load", () => {
+      pass.value = "";
+      confirmPass.value = "";
+      updateStrength();
+      updateMatch();
+    });
+
+    // Assign names ONLY when submitting (prevents Chrome autofill)
+    form.addEventListener("submit", (e) => {
+      // Ensure password match before submit
+      if (pass.value !== confirmPass.value) {
+        e.preventDefault();
+        matchHint.textContent = "Passwords do not match ❌";
+        matchHint.style.color = "#EF4444";
+        return;
+      }
+
+      // Now attach names so Flask receives values
+      pass.setAttribute("name", pass.dataset.name);
+      confirmPass.setAttribute("name", confirmPass.dataset.name);
+    });
+
+    // Show/Hide Password
+    document.getElementById("togglePass").addEventListener("click", () => {
+      pass.type = (pass.type === "password") ? "text" : "password";
+      document.getElementById("togglePass").textContent = (pass.type === "password") ? "Show" : "Hide";
+    });
+
+    document.getElementById("toggleConfirm").addEventListener("click", () => {
+      confirmPass.type = (confirmPass.type === "password") ? "text" : "password";
+      document.getElementById("toggleConfirm").textContent = (confirmPass.type === "password") ? "Show" : "Hide";
+    });
+
+    // Strength meter + match check
+    const barFill = document.getElementById("barFill");
+    const strengthText = document.getElementById("strengthText");
+    const matchHint = document.getElementById("matchHint");
+
+    function calcStrength(p) {
+      let score = 0;
+      if (p.length >= 8) score++;
+      if (/[A-Z]/.test(p)) score++;
+      if (/[a-z]/.test(p)) score++;
+      if (/\d/.test(p)) score++;
+      if (/[!@#$%^&*(),.?":{}|<>_\-+=/\\[\]`~;]/.test(p)) score++;
+      return score; // 0..5
+    }
+
+    function updateStrength() {
+      const p = pass.value;
+      const score = calcStrength(p);
+      barFill.style.width = ((score / 5) * 100) + "%";
+
+      if (!p) {
+        strengthText.textContent = "Password strength: —";
+        strengthText.style.color = "#6B7280";
+        return;
+      }
+
+      if (score <= 2) {
+        strengthText.textContent = "Password strength: Weak ❌";
+        strengthText.style.color = "#EF4444";
+      } else if (score === 3 || score === 4) {
+        strengthText.textContent = "Password strength: Medium ⚠️";
+        strengthText.style.color = "#F59E0B";
+      } else {
+        strengthText.textContent = "Password strength: Strong ✅";
+        strengthText.style.color = "#10B981";
+      }
+    }
+
+    function updateMatch() {
+      if (!confirmPass.value) { matchHint.textContent = ""; return; }
+      if (pass.value === confirmPass.value) {
+        matchHint.textContent = "Passwords match ✅";
+        matchHint.style.color = "#10B981";
+      } else {
+        matchHint.textContent = "Passwords do not match ❌";
+        matchHint.style.color = "#EF4444";
+      }
+    }
+
+    pass.addEventListener("input", () => { updateStrength(); updateMatch(); });
+    confirmPass.addEventListener("input", updateMatch);
+
+    updateStrength();
+  </script>
+
+</body>
+</html>

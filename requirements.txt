@@ -1,0 +1,39 @@
+# ============================================
+# STUDENT SCHOLARSHIP RECOMMENDATION SYSTEM
+# Python Dependencies
+# ============================================
+
+# Core Flask Framework
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Werkzeug==3.0.1
+
+# Database Adapters (Choose based on your database)
+# For SQLite (default - no additional package needed)
+# For PostgreSQL:
+# psycopg2-binary==2.9.9
+# For MySQL:
+# pymysql==1.1.0
+
+# Data Processing & Analysis
+pandas==2.1.4
+numpy==1.26.2
+
+# Machine Learning & NLP
+scikit-learn==1.3.2
+nltk==3.8.1
+spacy==3.7.2
+
+# Environment Variables
+python-dotenv==1.0.0
+
+# Optional: For enhanced features
+# Flask-Login==0.6.3          # User session management
+# Flask-WTF==1.2.1            # Form validation
+# Flask-Migrate==4.0.5        # Database migrations
+# email-validator==2.1.0      # Email validation
+# gunicorn==21.2.0            # Production server (for deployment)
+
+# Testing (Optional)
+# pytest==7.4.3
+# pytest-flask==1.3.0

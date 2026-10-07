@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - ScholarFlow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1:#f7f8ff;
+      --bg2:#f6f7fb;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:#667085;
+      --line:#e6e8ef;
+
+      --primary:#4f46e5;
+      --primary2:#7c3aed;
+
+      --soft:#eef2ff;
+      --softText:#3730a3;
+
+      --dangerBg:#fff1f2;
+      --dangerText:#9f1239;
+
+      --successBg:#ecfdf3;
+      --successText:#027a48;
+
+      --warningBg:#fff7ed;
+      --warningText:#b54708;
+
+      --shadow: 0 22px 55px rgba(16, 24, 40, 0.10);
+      --shadow2: 0 10px 25px rgba(16, 24, 40, 0.06);
+
+      --radius: 22px;
+      --radius2: 16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 10% 0%, rgba(124,58,237,0.12), transparent 55%),
+        radial-gradient(900px 450px at 95% 10%, rgba(79,70,229,0.12), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+    }
+
+    .wrap{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 22px 18px 48px;
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(230,232,239,0.9);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 10px;
+      z-index: 20;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-badge{
+      width:40px;height:40px;
+      border-radius: 14px;
+      display:grid;place-items:center;
+      color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 16px 30px rgba(79,70,229,0.25);
+      font-size: 18px;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+    }
+
+    .userchip{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(230,232,239,0.95);
+      background: #fff;
+    }
+
+    .avatar{
+      width:36px;height:36px;border-radius:999px;
+      display:grid;place-items:center;
+      color:#fff;font-weight:900;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    }
+
+    .user-meta{line-height:1.15}
+    .user-name{font-weight:800;font-size:13px}
+    .user-email{font-size:12px;color:var(--muted)}
+
+    .btn{
+      border: 1px solid rgba(230,232,239,0.95);
+      background:#fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor:pointer;
+      color: var(--text);
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      text-decoration:none;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(16,24,40,0.08);
+    }
+
+    .btn-soft{
+      background: var(--soft);
+      border-color: #e0e7ff;
+      color: var(--softText);
+    }
+
+    .btn-danger{
+      border: none;
+      background: var(--dangerBg);
+      color: var(--dangerText);
+    }
+
+    .btn-primary{
+      border:none;
+      color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 18px 35px rgba(79,70,229,0.22);
+    }
+
+    .btn-primary:hover{
+      box-shadow: 0 22px 40px rgba(79,70,229,0.28);
+    }
+
+    .hero{
+      text-align:center;
+      padding: 18px 0 6px;
+    }
+
+    .hero h1{
+      margin: 18px 0 6px;
+      font-size: 48px;
+      letter-spacing: -1.4px;
+      line-height: 1.03;
+    }
+
+    .hero p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .flash-wrap{
+      max-width: 980px;
+      margin: 16px auto 0;
+    }
+
+    .flash{
+      padding: 14px 16px;
+      border-radius: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      border: 1px solid transparent;
+    }
+
+    .flash.success{
+      background: var(--successBg);
+      color: var(--successText);
+      border-color: #abefc6;
+    }
+
+    .flash.warning{
+      background: var(--warningBg);
+      color: var(--warningText);
+      border-color: #fedf89;
+    }
+
+    .flash.error{
+      background: var(--dangerBg);
+      color: var(--dangerText);
+      border-color: #fda4af;
+    }
+
+    .flash.info{
+      background: #eff8ff;
+      color: #175cd3;
+      border-color: #b2ddff;
+    }
+
+    .grid{
+      display:flex;
+      justify-content:center;
+      margin-top: 18px;
+    }
+
+    .card{
+      width: 100%;
+      max-width: 980px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid rgba(230,232,239,0.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      overflow:hidden;
+      position: relative;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(800px 220px at 15% -10%, rgba(124,58,237,0.14), transparent 60%),
+                  radial-gradient(700px 220px at 90% -15%, rgba(79,70,229,0.14), transparent 60%);
+      pointer-events:none;
+    }
+
+    .card-pad{
+      position: relative;
+      padding: 26px;
+    }
+
+    .card-title{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card-title h2{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:-0.3px;
+      font-weight: 900;
+    }
+
+    .step-meta{
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .progress-wrap{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      margin: 10px 0 6px;
+    }
+
+    .progress{
+      flex:1;
+      height: 10px;
+      background: #eef2ff;
+      border-radius: 999px;
+      overflow:hidden;
+      border: 1px solid rgba(224,231,255,0.9);
+    }
+
+    .progress > div{
+      height:100%;
+      width: 33.33%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--primary2));
+      transition: width 0.35s ease;
+    }
+
+    .step-dots{
+      display:flex;
+      gap: 6px;
+      align-items:center;
+    }
+
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:#e5e7eb;
+      border: 1px solid #dfe3ea;
+    }
+
+    .dot.active{
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      border: none;
+      box-shadow: 0 10px 18px rgba(79,70,229,0.25);
+    }
+
+    form{margin:0}
+
+    .section-h{
+      margin: 16px 0 8px;
+      font-weight: 900;
+      font-size: 13px;
+      color: #111827;
+      letter-spacing:-0.2px;
+      text-transform: uppercase;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .form-grid.one{
+      grid-template-columns: 1fr;
+    }
+
+    label{
+      display:block;
+      font-size: 12px;
+      color:#344054;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .req{
+      color:#ef4444;
+    }
+
+    .field{
+      background:#fff;
+      border: 1px solid rgba(230,232,239,0.95);
+      border-radius: 16px;
+      padding: 10px 12px;
+      transition: 0.18s ease;
+      box-shadow: 0 1px 0 rgba(16,24,40,0.02);
+    }
+
+    .field:focus-within{
+      border-color: rgba(124,58,237,0.35);
+      box-shadow: 0 0 0 4px rgba(124,58,237,0.12);
+      transform: translateY(-1px);
+    }
+
+    input, select, textarea{
+      width:100%;
+      border:none;
+      outline:none;
+      font-size: 14px;
+      font-family: Inter, sans-serif;
+      background: transparent;
+      color: var(--text);
+      padding: 2px 0;
+    }
+
+    input::placeholder, textarea::placeholder{
+      color:#98a2b3;
+    }
+
+    input[disabled]{
+      color:#98a2b3;
+      cursor:not-allowed;
+    }
+
+    textarea{
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .actions{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(230,232,239,0.95);
+    }
+
+    .left-actions, .right-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    .tip{
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(224,231,255,0.9);
+      background: linear-gradient(180deg, rgba(238,242,255,0.9), rgba(255,255,255,0.7));
+      color:#3730a3;
+      font-weight: 700;
+      box-shadow: 0 10px 22px rgba(79,70,229,0.10);
+    }
+
+    .tip small{
+      display:block;
+      color:#4f46e5;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    @media (max-width: 760px){
+      .hero h1{font-size: 34px}
+      .form-grid{grid-template-columns:1fr}
+      .nav{position: static}
+      .card-pad{padding: 18px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">🎓</div>
+        <div>ScholarFlow</div>
+      </div>
+
+      <div class="nav-right">
+        <div class="userchip">
+          <div class="avatar" id="avatarText">S</div>
+          <div class="user-meta">
+            <div class="user-name">{{ user_name }}</div>
+            <div class="user-email">{{ user_email }}</div>
+          </div>
+        </div>
+
+        <a class="btn btn-soft" href="{{ url_for('home') }}">🏠 Home</a>
+        <a class="btn btn-danger" href="{{ url_for('logout') }}">↩ Logout</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>Your Scholarship Dashboard</h1>
+      <p>Complete your profile to unlock personalized scholarship matches</p>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-wrap">
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-pad">
+
+          <div class="card-title">
+            <h2>Complete Your Profile</h2>
+            <div class="step-meta" id="stepMeta">Step 1 of 3</div>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress"><div id="progressBar"></div></div>
+            <div class="step-dots" aria-label="Steps">
+              <span class="dot active" id="dot1"></span>
+              <span class="dot" id="dot2"></span>
+              <span class="dot" id="dot3"></span>
+            </div>
+          </div>
+
+          <form method="POST" action="{{ url_for('recommendations_page') }}">
+
+            <div class="step" id="step1">
+              <div class="section-h">Basic Information</div>
+
+              <div class="form-grid one">
+                <div>
+                  <label>Full Name <span class="req">*</span></label>
+                  <div class="field">
+                    <input
+                      id="full_name"
+                      name="full_name"
+                      value="{{ saved_profile.full_name if saved_profile else user_name }}"
+                      placeholder="Enter your full name"
+                      required
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label>Email</label>
+                  <div class="field">
+                    <input id="email" value="{{ user_email }}" disabled>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label>Phone Number <span class="req">*</span></label>
+                  <div class="field">
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      pattern="[0-9]{10}"
+                      maxlength="10"
+                      minlength="10"
+                      inputmode="numeric"
+                      required
+                      value="{{ saved_profile.phone if saved_profile else '' }}"
+                      placeholder="Enter 10 digit phone number"
+                      title="Phone number must be exactly 10 digits"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label>Date of Birth</label>
+                  <div class="field">
+                    <input
+                      id="dob"
+                      name="dob"
+                      type="date"
+                      value="{{ saved_profile.dob if saved_profile else '' }}"
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label>Gender <span class="req">*</span></label>
+                  <div class="field">
+                    <select id="gender" name="gender" required>
+                      <option value="">Select gender</option>
+                      <option value="Male" {% if saved_profile and saved_profile.gender == 'Male' %}selected{% endif %}>Male</option>
+                      <option value="Female" {% if saved_profile and saved_profile.gender == 'Female' %}selected{% endif %}>Female</option>
+                      <option value="Prefer not to say" {% if saved_profile and saved_profile.gender == 'Prefer not to say' %}selected{% endif %}>Prefer not to say</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label>Year of Study <span class="req">*</span></label>
+                  <div class="field">
+                    <select id="year_of_study" name="year_of_study" required>
+                      <option value="">Select year</option>
+                      <option value="1" {% if saved_profile and saved_profile.year_of_study|string == '1' %}selected{% endif %}>1st Year</option>
+                      <option value="2" {% if saved_profile and saved_profile.year_of_study|string == '2' %}selected{% endif %}>2nd Year</option>
+                      <option value="3" {% if saved_profile and saved_profile.year_of_study|string == '3' %}selected{% endif %}>3rd Year</option>
+                      <option value="4" {% if saved_profile and saved_profile.year_of_study|string == '4' %}selected{% endif %}>4th Year</option>
+                      <option value="PG1" {% if saved_profile and saved_profile.year_of_study == 'PG1' %}selected{% endif %}>PG 1st Year</option>
+                      <option value="PG2" {% if saved_profile and saved_profile.year_of_study == 'PG2' %}selected{% endif %}>PG 2nd Year</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label>Course / Program <span class="req">*</span></label>
+                  <div class="field">
+                    <select id="course" name="course" required onchange="updateSpecializations()">
+                      <option value="">Select your course</option>
+                      <option value="B.Tech" {% if saved_profile and saved_profile.course == 'B.Tech' %}selected{% endif %}>B.Tech</option>
+                      <option value="M.Tech" {% if saved_profile and saved_profile.course == 'M.Tech' %}selected{% endif %}>M.Tech</option>
+                      <option value="MBA" {% if saved_profile and saved_profile.course == 'MBA' %}selected{% endif %}>MBA</option>
+                      <option value="MCA" {% if saved_profile and saved_profile.course == 'MCA' %}selected{% endif %}>MCA</option>
+                      <option value="B.Sc" {% if saved_profile and saved_profile.course == 'B.Sc' %}selected{% endif %}>B.Sc</option>
+                      <option value="M.Sc" {% if saved_profile and saved_profile.course == 'M.Sc' %}selected{% endif %}>M.Sc</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label>Specialization <span class="req">*</span></label>
+                  <div class="field">
+                    <select id="specialization" name="specialization" required data-selected="{{ saved_profile.specialization if saved_profile else '' }}">
+                      <option value="">Select specialization</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid one">
+                <div>
+                  <label>College Name</label>
+                  <div class="field">
+                    <input
+                      id="college"
+                      name="college"
+                      value="{{ saved_profile.college if saved_profile else '' }}"
+                      placeholder="Enter your college name"
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="tip">
+                <small>✨ Tip</small>
+                Fill all required fields to unlock accurate scholarship matches.
+              </div>
+            </div>
+
+            <div class="step" id="step2" style="display:none;">
+              <div class="section-h">Academic & Financial</div>
+
+              <div class="form-grid">
+                <div>
+                  <label>CGPA / Percentage <span class="req">*</span></label>
+                  <div class="field">
+                    <input
+                      id="cgpa"
+                      name="cgpa"
+                      type="number"
+                      step="0.01"
+                      min="0"
+                      max="10"
+                      placeholder="e.g., 8.5"
+                      value="{{ saved_profile.cgpa if saved_profile else '' }}"
+                      required
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label>Family Annual Income (₹) <span class="req">*</span></label>
+                  <div class="field">
+                    <input
+                      id="income"
+                      name="income"
+                      type="number"
+                      step="1000"
+                      min="0"
+                      placeholder="e.g., 500000"
+                      value="{{ saved_profile.income if saved_profile else '' }}"
+                      required
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div>
+                  <label>Category <span class="req">*</span></label>
+                  <div class="field">
+                    <select id="category" name="category" required>
+                      <option value="">Select category</option>
+                      <option value="General" {% if saved_profile and saved_profile.category == 'General' %}selected{% endif %}>General</option>
+                      <option value="OBC" {% if saved_profile and saved_profile.category == 'OBC' %}selected{% endif %}>OBC</option>
+                      <option value="SC" {% if saved_profile and saved_profile.category == 'SC' %}selected{% endif %}>SC</option>
+                      <option value="ST" {% if saved_profile and saved_profile.category == 'ST' %}selected{% endif %}>ST</option>
+                      <option value="EWS" {% if saved_profile and saved_profile.category == 'EWS' %}selected{% endif %}>EWS</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label>State / Region <span class="req">*</span></label>
+                  <div class="field">
+                    <select id="state" name="state" required>
+                      <option value="">Select state</option>
+                      <option value="Andhra Pradesh" {% if saved_profile and saved_profile.state == 'Andhra Pradesh' %}selected{% endif %}>Andhra Pradesh</option>
+                      <option value="Arunachal Pradesh" {% if saved_profile and saved_profile.state == 'Arunachal Pradesh' %}selected{% endif %}>Arunachal Pradesh</option>
+                      <option value="Assam" {% if saved_profile and saved_profile.state == 'Assam' %}selected{% endif %}>Assam</option>
+                      <option value="Bihar" {% if saved_profile and saved_profile.state == 'Bihar' %}selected{% endif %}>Bihar</option>
+                      <option value="Chhattisgarh" {% if saved_profile and saved_profile.state == 'Chhattisgarh' %}selected{% endif %}>Chhattisgarh</option>
+                      <option value="Delhi" {% if saved_profile and saved_profile.state == 'Delhi' %}selected{% endif %}>Delhi</option>
+                      <option value="Goa" {% if saved_profile and saved_profile.state == 'Goa' %}selected{% endif %}>Goa</option>
+                      <option value="Gujarat" {% if saved_profile and saved_profile.state == 'Gujarat' %}selected{% endif %}>Gujarat</option>
+                      <option value="Haryana" {% if saved_profile and saved_profile.state == 'Haryana' %}selected{% endif %}>Haryana</option>
+                      <option value="Himachal Pradesh" {% if saved_profile and saved_profile.state == 'Himachal Pradesh' %}selected{% endif %}>Himachal Pradesh</option>
+                      <option value="Jammu and Kashmir" {% if saved_profile and saved_profile.state == 'Jammu and Kashmir' %}selected{% endif %}>Jammu and Kashmir</option>
+                      <option value="Jharkhand" {% if saved_profile and saved_profile.state == 'Jharkhand' %}selected{% endif %}>Jharkhand</option>
+                      <option value="Karnataka" {% if saved_profile and saved_profile.state == 'Karnataka' %}selected{% endif %}>Karnataka</option>
+                      <option value="Kerala" {% if saved_profile and saved_profile.state == 'Kerala' %}selected{% endif %}>Kerala</option>
+                      <option value="Madhya Pradesh" {% if saved_profile and saved_profile.state == 'Madhya Pradesh' %}selected{% endif %}>Madhya Pradesh</option>
+                      <option value="Maharashtra" {% if saved_profile and saved_profile.state == 'Maharashtra' %}selected{% endif %}>Maharashtra</option>
+                      <option value="Manipur" {% if saved_profile and saved_profile.state == 'Manipur' %}selected{% endif %}>Manipur</option>
+                      <option value="Meghalaya" {% if saved_profile and saved_profile.state == 'Meghalaya' %}selected{% endif %}>Meghalaya</option>
+                      <option value="Mizoram" {% if saved_profile and saved_profile.state == 'Mizoram' %}selected{% endif %}>Mizoram</option>
+                      <option value="Nagaland" {% if saved_profile and saved_profile.state == 'Nagaland' %}selected{% endif %}>Nagaland</option>
+                      <option value="Odisha" {% if saved_profile and saved_profile.state == 'Odisha' %}selected{% endif %}>Odisha</option>
+                      <option value="Punjab" {% if saved_profile and saved_profile.state == 'Punjab' %}selected{% endif %}>Punjab</option>
+                      <option value="Rajasthan" {% if saved_profile and saved_profile.state == 'Rajasthan' %}selected{% endif %}>Rajasthan</option>
+                      <option value="Sikkim" {% if saved_profile and saved_profile.state == 'Sikkim' %}selected{% endif %}>Sikkim</option>
+                      <option value="Tamil Nadu" {% if saved_profile and saved_profile.state == 'Tamil Nadu' %}selected{% endif %}>Tamil Nadu</option>
+                      <option value="Telangana" {% if saved_profile and saved_profile.state == 'Telangana' %}selected{% endif %}>Telangana</option>
+                      <option value="Uttarakhand" {% if saved_profile and saved_profile.state == 'Uttarakhand' %}selected{% endif %}>Uttarakhand</option>
+                      <option value="Uttar Pradesh" {% if saved_profile and saved_profile.state == 'Uttar Pradesh' %}selected{% endif %}>Uttar Pradesh</option>
+                      <option value="West Bengal" {% if saved_profile and saved_profile.state == 'West Bengal' %}selected{% endif %}>West Bengal</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tip">
+                <small>🎯 Hint</small>
+                CGPA + Income help filter eligible scholarships before AI matching.
+              </div>
+            </div>
+
+            <div class="step" id="step3" style="display:none;">
+              <div class="section-h">Skills & Achievements</div>
+
+              <div class="form-grid one">
+                <div>
+                  <label>Skills / Achievements (Optional)</label>
+                  <div class="field">
+                    <textarea
+                      id="skills"
+                      name="skills"
+                      placeholder="Hackathon winner, research paper, sports, etc."
+                    >{{ saved_profile.skills if saved_profile else '' }}</textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tip">
+                <small>✅ Final Step</small>
+                Add achievements to improve match score and ranking.
+              </div>
+            </div>
+
+            <div class="actions">
+              <div class="left-actions">
+                <button type="button" class="btn" id="backBtn" onclick="prevStep()" style="display:none;">← Back</button>
+              </div>
+
+              <div class="right-actions">
+                <button type="button" class="btn btn-soft" onclick="saveProfileMessage()">💾 Save</button>
+                <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextStep()">Next Step →</button>
+                <button type="submit" class="btn btn-primary" id="getBtn" style="display:none;">🎯 Get Recommendations</button>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  const specializationMap = {
+    "B.Tech": [
+      "Computer Science Engineering (CSE)",
+      "AI & Data Science",
+      "Information Technology (IT)",
+      "Electronics & Communication (ECE)",
+      "Electrical & Electronics (EEE)",
+      "Mechanical Engineering",
+      "Civil Engineering",
+      "Cyber Security",
+      "IoT",
+      "Robotics"
+    ],
+    "M.Tech": ["Computer Science", "AI / ML", "Data Science", "VLSI", "Power Systems", "Structural Engineering"],
+    "MBA": ["Finance", "Marketing", "Human Resources", "Business Analytics", "Operations", "International Business"],
+    "MCA": ["Software Development", "Data Science", "Cloud Computing", "Cyber Security", "AI Applications"],
+    "B.Sc": ["Computer Science", "Mathematics", "Physics", "Chemistry", "Statistics"],
+    "M.Sc": ["Computer Science", "Mathematics", "Physics", "Chemistry", "Statistics"]
+  };
+
+  let currentStep = 1;
+
+  function updateSpecializations(){
+    const course = document.getElementById("course").value;
+    const specSelect = document.getElementById("specialization");
+    const savedValue = specSelect.getAttribute("data-selected") || "";
+
+    specSelect.innerHTML = `<option value="">Select specialization</option>`;
+
+    const specs = specializationMap[course] || [];
+    specs.forEach(spec => {
+      const opt = document.createElement("option");
+      opt.value = spec;
+      opt.textContent = spec;
+      if (savedValue === spec) {
+        opt.selected = true;
+      }
+      specSelect.appendChild(opt);
+    });
+  }
+
+  function setDots(step){
+    document.getElementById("dot1").classList.toggle("active", step >= 1);
+    document.getElementById("dot2").classList.toggle("active", step >= 2);
+    document.getElementById("dot3").classList.toggle("active", step >= 3);
+  }
+
+  function setStep(step){
+    currentStep = step;
+
+    document.getElementById("step1").style.display = step === 1 ? "block" : "none";
+    document.getElementById("step2").style.display = step === 2 ? "block" : "none";
+    document.getElementById("step3").style.display = step === 3 ? "block" : "none";
+
+    const bar = document.getElementById("progressBar");
+    bar.style.width = step === 1 ? "33.33%" : step === 2 ? "66.66%" : "100%";
+
+    document.getElementById("stepMeta").textContent = "Step " + step + " of 3";
+
+    document.getElementById("backBtn").style.display = step === 1 ? "none" : "inline-flex";
+    document.getElementById("nextBtn").style.display = step === 3 ? "none" : "inline-flex";
+    document.getElementById("getBtn").style.display = step === 3 ? "inline-flex" : "none";
+
+    setDots(step);
+  }
+
+  function validatePhone(){
+    const phone = document.getElementById("phone").value.trim();
+    const phoneRegex = /^[0-9]{10}$/;
+
+    if(!phoneRegex.test(phone)){
+      alert("⚠️ Phone number must be exactly 10 digits.");
+      document.getElementById("phone").focus();
+      return false;
+    }
+    return true;
+  }
+
+  function validateFields(ids){
+    for(const id of ids){
+      const el = document.getElementById(id);
+      if(!el || !String(el.value).trim()){
+        alert("⚠️ Please fill all required fields (*) before continuing.");
+        if (el && typeof el.focus === "function") el.focus();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function nextStep(){
+    if(currentStep === 1){
+      if(!validateFields(["full_name","phone","gender","course","specialization","year_of_study"])) return;
+      if(!validatePhone()) return;
+      setStep(2);
+    } else if(currentStep === 2){
+      if(!validateFields(["cgpa","income","category","state"])) return;
+      setStep(3);
+    }
+  }
+
+  function prevStep(){
+    if(currentStep === 2) setStep(1);
+    else if(currentStep === 3) setStep(2);
+  }
+
+  function saveProfileMessage(){
+    alert("Profile data will be saved when you click Get Recommendations.");
+  }
+
+  (function init(){
+    const name = "{{ user_name }}";
+    const initial = (name && name.trim().length) ? name.trim()[0].toUpperCase() : "S";
+    document.getElementById("avatarText").textContent = initial;
+
+    updateSpecializations();
+    setStep(1);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+name,amount,deadline,provider,eligibility,min_cgpa,course,category,state,max_income,application_link
+Central Sector Scheme of Scholarship for College & University Students,20000,2026-10-31,Ministry of Education,Top 20 percentile in Class 12; UG students; family income ≤ ₹8 lakh,1.0,All,General,All,800000,https://scholarships.gov.in
+INSPIRE Scholarship (SHE),80000,2026-10-31,Department of Science & Technology,Students pursuing BSc/BS in Natural Sciences,1.0,B.Sc,General,All,999999999,https://online-inspire.gov.in
+AICTE Pragati Scholarship for Girls,50000,2026-09-30,AICTE,Girl students in AICTE approved technical institutions,6.0,All,General,All,999999999,https://www.aicte-india.org
+AICTE Saksham Scholarship,50000,2026-09-30,AICTE,Differently abled students in AICTE institutes,6.0,All,PwD,All,999999999,https://www.aicte-india.org
+Post Matric Scholarship for Minorities,10000,2026-10-31,Ministry of Minority Affairs,Students from minority communities pursuing higher education,5.0,All,Minority,All,999999999,https://scholarships.gov.in
+Merit Cum Means Scholarship for Minorities,20000,2026-10-31,Ministry of Minority Affairs,Minority students in professional/technical courses,5.0,All,Minority,All,999999999,https://scholarships.gov.in
+Prime Minister's Scholarship Scheme (PMSS),30000,2026-10-31,Kendriya Sainik Board,Wards of ex-servicemen pursuing professional courses,6.0,All,General,All,999999999,https://ksb.gov.in
+Reliance Foundation Undergraduate Scholarship,200000,2026-10-31,Reliance Foundation,First year UG students across India,6.0,All,General,All,999999999,https://www.reliancefoundation.org
+Kotak Kanya Scholarship,10000,2026-11-30,Kotak Mahindra Group,Meritorious girl students pursuing professional UG courses,7.5,All,General,All,999999999,https://www.buddy4study.com
+SBI Asha Scholarship,75000,2026-11-30,SBI Foundation,UG students from low income families,7.5,All,General,All,500000,https://www.sbifoundation.in
+HDFC Bank Parivartan ECSS,50000,2026-12-31,HDFC Bank,Students facing financial hardship,5.5,B.Tech,General,All,500000,https://www.buddy4study.com
+Tata Capital Pankh Scholarship,100000,2026-09-30,Tata Capital,Economically weaker students pursuing UG,6.0,All,General,All,500000,https://www.buddy4study.com
+Foundation for Excellence Scholarship,10000,2026-12-31,Foundation for Excellence,Engineering/medical students from low income families,7.0,MBBS,General,All,500000,https://ffe.org
+Sitaram Jindal Scholarship Scheme,2000,2026-09-30,Sitaram Jindal Foundation,UG and PG students with merit,6.5,PG,General,All,999999999,https://www.sitaramjindalfoundation.org
+LIC Golden Jubilee Scholarship,20000,2026-09-30,LIC,Economically weaker students pursuing UG,6.0,All,General,All,500000,https://licindia.in
+Aditya Birla Scholarship,175000,2026-09-30,Aditya Birla Group,Top students in select institutes,8.5,All,General,All,999999999,https://www.adityabirla.com
+ONGC Scholarship Scheme,48000,2026-10-31,ONGC Foundation,Engineering and MBBS students,6.0,MBBS,General,All,999999999,https://ongcscholar.org
+NTPC Scholarship Scheme,1500,2026-09-30,NTPC Limited,SC/ST/PwD engineering students,6.0,B.Tech,SC/ST,All,999999999,https://ntpc.co.in
+Indian Oil Academic Scholarship,3000,2026-10-31,Indian Oil Corporation,Engineering/MBBS students,6.5,MBBS,General,All,999999999,https://iocl.com
+Mahindra All India Talent Scholarship,10000,2026-08-31,Mahindra Foundation,Diploma and technical students,6.0,Diploma,General,All,999999999,https://mahindrafoundation.org
+Bharti Airtel Scholarship Program,10000,2026-12-31,Bharti Foundation,Engineering students from low income families,7.0,B.Tech,General,All,500000,https://www.bharti.com
+Legrand Empowering Scholarship,100000,2026-10-31,Legrand India,Girls and PwD students in STEM,6.0,B.Tech,PwD,All,999999999,https://www.buddy4study.com
+DXC Progressing Minds Scholarship,50000,2026-09-30,DXC Technology,STEM students with financial need,6.0,B.Tech,General,All,999999999,https://www.buddy4study.com
+Santoor Women’s Scholarship,24000,2026-09-30,Wipro Consumer Care,Girls from disadvantaged backgrounds,6.0,All,General,All,999999999,https://www.santoorscholarship.com
+GSK Scholars Programme,100000,2026-10-31,GlaxoSmithKline,MBBS students from low income families,6.5,MBBS,General,All,500000,https://www.buddy4study.com
+OP Jindal Engineering & Management Scholarship,65000,2026-09-30,OP Jindal Group,Engineering/management students in top colleges,7.0,B.Tech,General,All,999999999,https://www.opjindal.org
+Narotam Sekhsaria Scholarship,10000,2026-03-31,Narotam Sekhsaria Foundation,Students with strong academic record,7.0,All,General,All,999999999,https://www.narotamsekhsariafoundation.org
+JN Tata Endowment Loan Scholarship,10000,2026-03-31,Tata Trusts,Indian students pursuing higher education,7.0,All,General,All,999999999,https://www.jntataendowment.org
+Aga Khan Foundation International Scholarship,10000,2026-03-31,Aga Khan Foundation,Meritorious students with financial need,7.0,All,General,All,999999999,https://www.akdn.org
+Google Generation Scholarship,10000,2026-05-31,Google,Students studying computer science,7.0,B.Tech,General,All,999999999,https://buildyourfuture.withgoogle.com
+Adobe India Women in Technology Scholarship,10000,2026-09-30,Adobe,Female students in computer science,7.0,B.Tech,General,All,999999999,https://research.adobe.com
+Infosys STEM Stars Scholarship,10000,2026-05-31,Infosys Foundation,Girls pursuing STEM degrees,7.5,B.Tech,General,All,999999999,https://www.infosys.com
+Ericsson Empowering Girls Scholarship,100000,2026-09-30,Ericsson India,Girls in STEM programs,7.0,B.Tech,General,All,999999999,https://www.buddy4study.com
+Rolls Royce Unnati Scholarship,35000,2026-09-30,Rolls-Royce India,Women engineering students,6.0,B.Tech,General,All,999999999,https://www.buddy4study.com
+Cummins Scholarship,50000,2026-09-30,Cummins India,Engineering students,6.0,B.Tech,General,All,999999999,https://www.buddy4study.com
+HSBC Scholarship Programme,50000,2026-08-31,HSBC India,UG students from low income families,6.0,All,General,All,500000,https://www.hsbc.co.in
+Vidyasaarathi Scholarship,100000,2026-09-30,NSDL e-Governance,Students with financial need,6.0,All,General,All,999999999,https://www.vidyasaarathi.co.in
+Coal India Scholarship Scheme,1000,2026-09-30,Coal India Limited,Engineering students,6.0,B.Tech,General,All,999999999,https://www.coalindia.in
+Dr Ambedkar Scholarship for Economically Backward Classes,15000,2026-10-31,Government of India,Economically backward students,6.0,All,General,All,500000,https://scholarships.gov.in
+Khelo India Scholarship,500000,2026-01-31,Ministry of Youth Affairs,Athletes representing India,1.0,All,General,All,999999999,https://youth.kheloindia.gov.in
+UGC Ishan Uday Scholarship,7800,2026-10-31,UGC,Students from North East India pursuing UG,6.0,All,General,All,999999999,https://www.ugc.ac.in
+UGC Single Girl Child Scholarship,36200,2026-10-31,UGC,Single girl child pursuing PG,6.0,PG,General,All,999999999,https://www.ugc.ac.in
+UGC PG Merit Scholarship for University Rank Holders,3100,2026-10-31,UGC,UG rank holders pursuing PG,6.0,PG,General,All,999999999,https://www.ugc.ac.in
+Samsung Star Scholar Program,10000,2026-11-30,Samsung India,IIT students from low income families,8.5,All,General,All,500000,https://www.samsung.com
+Philips Scholarship Program,50000,2026-09-30,Philips India,Engineering students,6.0,B.Tech,General,All,999999999,https://www.buddy4study.com
+Schaeffler India Hope Scholarship,50000,2026-09-30,Schaeffler India,Engineering students with financial need,6.0,B.Tech,General,All,999999999,https://www.buddy4study.com
+Raman Kant Munjal Scholarship,550000,2026-08-31,Hero Group,UG students from low income families,8.0,All,General,All,500000,https://www.buddy4study.com
+L&T Build India Scholarship,10000,2026-04-30,Larsen & Toubro,Final year civil engineering students,7.0,B.Tech,General,All,999999999,https://www.larsentoubro.com
+Dr Reddy’s Foundation Scholarship,200000,2026-08-31,Dr Reddy's Foundation,Engineering/medical students,7.0,MBBS,General,All,999999999,https://www.drreddysfoundation.org
+Tata Trusts Medical & Healthcare Scholarship,100000,2026-09-30,Tata Trusts,Medical students,6.5,MBBS,General,All,999999999,https://www.tatatrusts.org
+Kerala Post Matric Scholarship (SC Students),10000,2026-11-30,Kerala SC Development Dept,SC students studying in post‑matric courses,5.0,All,SC,Kerala,999999999,https://egrantz.kerala.gov.in
+Kerala Post Matric Scholarship (ST Students),10000,2026-11-30,Kerala ST Development Dept,ST students in UG/PG programs,5.0,PG,ST,Kerala,999999999,https://egrantz.kerala.gov.in
+Kerala OBC Post Matric Scholarship,10000,2026-11-30,Kerala Backward Classes Dept,OBC students pursuing higher education,5.0,All,OBC,Kerala,999999999,https://egrantz.kerala.gov.in
+Kerala Merit Scholarship,10000,2026-10-31,Kerala Higher Education Dept,Meritorious UG students,7.5,All,General,Kerala,999999999,https://dcescholarship.kerala.gov.in
+Kerala Muslim Nadar Girls Scholarship,4000,2026-10-31,Kerala Directorate of Collegiate Education,Girls from Muslim/Nadar communities,6.0,All,General,Kerala,999999999,https://dcescholarship.kerala.gov.in
+Kerala Hindi Scholarship,5000,2026-10-31,Kerala Directorate of Collegiate Education,Students studying Hindi at UG level,6.0,All,General,Kerala,999999999,https://dcescholarship.kerala.gov.in
+Kerala Suvarna Jubilee Merit Scholarship,10000,2026-10-31,Kerala Govt,Meritorious UG/PG students,7.5,PG,General,Kerala,999999999,https://dcescholarship.kerala.gov.in
+Karnataka Post Matric Scholarship (SC),10000,2026-11-30,Karnataka Social Welfare Dept,SC students in higher education,5.0,All,SC,Karnataka,999999999,https://ssp.postmatric.karnataka.gov.in
+Karnataka Post Matric Scholarship (ST),10000,2026-11-30,Karnataka Tribal Welfare Dept,ST students pursuing UG/PG,5.0,PG,ST,Karnataka,999999999,https://ssp.postmatric.karnataka.gov.in
+Karnataka Vidyasiri Scholarship,1500,2026-10-31,Karnataka Backward Classes Dept,OBC students in UG programs,6.0,All,OBC,Karnataka,999999999,https://ssp.postmatric.karnataka.gov.in
+Karnataka Fee Reimbursement Scheme,10000,2026-10-31,Karnataka Govt,Low‑income students,6.0,All,General,Karnataka,999999999,https://ssp.postmatric.karnataka.gov.in
+Karnataka Minority Scholarship,10000,2026-10-31,Karnataka Minority Welfare Dept,Minority students in colleges,5.0,All,Minority,Karnataka,999999999,https://dom.karnataka.gov.in
+Karnataka Farmer’s Children Scholarship,5000,2026-10-31,Karnataka Agriculture Dept,Children of farmers,6.0,All,General,Karnataka,999999999,https://raitamitra.karnataka.gov.in
+Tamil Nadu Post Matric Scholarship (SC/ST),10000,2026-10-31,Tamil Nadu Adi Dravidar Welfare Dept,SC/ST students in higher education,5.0,All,SC/ST,Tamil Nadu,999999999,https://scholarships.tn.gov.in
+Tamil Nadu BC/MBC Scholarship,10000,2026-10-31,Tamil Nadu Backward Classes Dept,BC/MBC students in UG/PG,5.0,PG,General,Tamil Nadu,999999999,https://scholarships.tn.gov.in
+Tamil Nadu First Graduate Scholarship,20000,2026-10-31,Tamil Nadu Higher Education Dept,First graduate in family,6.0,All,General,Tamil Nadu,999999999,https://scholarships.tn.gov.in
+Tamil Nadu Farmer Scholarship,6000,2026-10-31,Tamil Nadu Govt,Children of farmers,6.0,All,General,Tamil Nadu,999999999,https://scholarships.tn.gov.in
+Tamil Nadu Minority Scholarship,10000,2026-10-31,Tamil Nadu Minority Welfare Dept,Minority community students,5.0,All,Minority,Tamil Nadu,999999999,https://scholarships.tn.gov.in
+Andhra Pradesh Post Matric Scholarship,10000,2026-11-30,AP Social Welfare Dept,SC/ST/OBC students,5.0,All,SC/ST,Andhra Pradesh,999999999,https://jnanabhumi.ap.gov.in
+Andhra Pradesh Jagananna Vidya Deevena,10000,2026-11-30,AP Govt,Economically weaker students,6.0,All,General,Andhra Pradesh,500000,https://jagananna.ap.gov.in
+Andhra Pradesh Jagananna Vasathi Deevena,20000,2026-11-30,AP Govt,Hostel/boarding students,6.0,All,General,Andhra Pradesh,999999999,https://jagananna.ap.gov.in
+Telangana Post Matric Scholarship,10000,2026-11-30,Telangana Govt,SC/ST/BC/EBC students,5.0,All,SC/ST,Telangana,999999999,https://telanganaepass.cgg.gov.in
+Telangana ePASS Scholarship,10000,2026-11-30,Telangana Govt,Students from weaker sections,5.0,All,General,Telangana,500000,https://telanganaepass.cgg.gov.in
+Telangana Minority Scholarship,10000,2026-10-31,Telangana Minority Welfare Dept,Minority students,5.0,All,Minority,Telangana,999999999,https://telanganaepass.cgg.gov.in
+Kerala CH Muhammed Koya Scholarship,5000,2026-10-31,Kerala Minority Welfare Dept,Minority girls in UG,6.0,All,Minority,Kerala,999999999,https://minoritywelfare.kerala.gov.in
+Kerala APJ Abdul Kalam Scholarship,6000,2026-10-31,Kerala Govt,Students with high merit,7.5,All,General,Kerala,999999999,https://dcescholarship.kerala.gov.in
+Kerala District Merit Scholarship,5000,2026-10-31,Kerala Education Dept,Top district‑level students,7.5,All,General,Kerala,999999999,https://dcescholarship.kerala.gov.in
+Karnataka CM Scholarship for Rural Students,10000,2026-10-31,Karnataka Govt,Rural background students,6.0,All,General,Karnataka,999999999,https://ssp.karnataka.gov.in
+Karnataka Labour Welfare Scholarship,8000,2026-10-31,Karnataka Labour Dept,Children of labourers,6.0,All,General,Karnataka,999999999,https://klwbapps.karnataka.gov.in
+Tamil Nadu Labour Welfare Scholarship,8000,2026-10-31,Tamil Nadu Labour Welfare Board,Children of labourers,6.0,All,General,Tamil Nadu,999999999,https://labour.tn.gov.in
+Tamil Nadu Education Scholarship for Differently Abled,10000,2026-10-31,Tamil Nadu Welfare Dept,Students with disabilities,5.0,All,PwD,Tamil Nadu,999999999,https://scholarships.tn.gov.in
+Kerala Blind/PH Scholarship,5000,2026-10-31,Kerala Social Justice Dept,Physically challenged students,5.0,All,PwD,Kerala,999999999,https://sjd.kerala.gov.in
+Kerala Fishermen Welfare Scholarship,10000,2026-10-31,Kerala Fisheries Dept,Children of fishermen,6.0,All,General,Kerala,999999999,https://fisheries.kerala.gov.in
+Karnataka Fishermen Scholarship,10000,2026-10-31,Karnataka Fisheries Dept,Children of fishermen,6.0,All,General,Karnataka,999999999,https://fisheries.karnataka.gov.in
+Tamil Nadu Fishermen Scholarship,10000,2026-10-31,Tamil Nadu Fisheries Dept,Children of fishermen,6.0,All,General,Tamil Nadu,999999999,https://fisheries.tn.gov.in
+Maharashtra Post Matric Scholarship (SC),10000,2026-11-30,Maharashtra Social Justice Dept,SC students in higher education,5.0,All,SC,Maharashtra,999999999,https://mahadbt.maharashtra.gov.in
+Maharashtra OBC Scholarship,10000,2026-11-30,Maharashtra Govt,OBC students in colleges,5.0,All,OBC,Maharashtra,999999999,https://mahadbt.maharashtra.gov.in
+Gujarat Post Matric Scholarship,10000,2026-11-30,Gujarat Govt,SC/ST/OBC students,5.0,All,SC/ST,Gujarat,999999999,https://digitalgujarat.gov.in
+Rajasthan Post Matric Scholarship,10000,2026-11-30,Rajasthan Govt,SC/ST/OBC students,5.0,All,SC/ST,Rajasthan,999999999,https://sje.rajasthan.gov.in
+Madhya Pradesh Post Matric Scholarship,10000,2026-11-30,MP Govt,SC/ST students,5.0,All,SC/ST,Madhya Pradesh,999999999,https://scholarshipportal.mp.nic.in
+Uttar Pradesh Post Matric Scholarship,10000,2026-11-30,UP Govt,SC/ST/OBC students,5.0,All,SC/ST,Uttar Pradesh,999999999,https://scholarship.up.gov.in
+Bihar Post Matric Scholarship,10000,2026-11-30,Bihar Govt,SC/ST students,5.0,All,SC/ST,Bihar,999999999,https://pmsonline.bih.nic.in
+West Bengal Swami Vivekananda Merit Scholarship,60000,2026-10-31,WB Govt,Meritorious students,6.0,All,General,West Bengal,999999999,https://svmcm.wb.gov.in
+Odisha Post Matric Scholarship,10000,2026-11-30,Odisha Govt,SC/ST/OBC students,5.0,All,SC/ST,Odisha,999999999,https://scholarship.odisha.gov.in
+Punjab Post Matric Scholarship,10000,2026-11-30,Punjab Govt,SC/ST students,5.0,All,SC/ST,Punjab,999999999,https://scholarships.punjab.gov.in
+Haryana Post Matric Scholarship,10000,2026-11-30,Haryana Govt,SC students,5.0,All,SC,Haryana,999999999,https://harchhatravratti.haryana.gov.in
+Assam Post Matric Scholarship,10000,2026-11-30,Assam Govt,SC/ST/OBC students,5.0,All,SC/ST,Assam,999999999,https://scholarships.assam.gov.in
+Chhattisgarh Post Matric Scholarship,10000,2026-11-30,CG Govt,SC/ST students,5.0,All,SC/ST,Chhattisgarh,999999999,https://postmatric-scholarship.cg.nic.in
+Jharkhand Post Matric Scholarship,10000,2026-11-30,Jharkhand Govt,SC/ST/OBC students,5.0,All,SC/ST,Jharkhand,999999999,https://ekalyan.cgg.gov.in
+Uttarakhand Post Matric Scholarship,10000,2026-11-30,Uttarakhand Govt,SC/ST/OBC students,5.0,All,SC/ST,Uttarakhand,999999999,https://scholarship.uk.gov.in

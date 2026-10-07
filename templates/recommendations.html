@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recommendations - ScholarFlow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#f7f8ff; --bg2:#f6f7fb;
+      --card:#ffffff; --text:#0b1220; --muted:#667085; --line:#e6e8ef;
+      --primary:#4f46e5; --primary2:#7c3aed;
+      --shadow: 0 22px 55px rgba(16, 24, 40, 0.10);
+      --shadow2: 0 14px 34px rgba(16, 24, 40, 0.08);
+      --radius: 22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 500px at 10% 0%, rgba(124,58,237,0.12), transparent 55%),
+        radial-gradient(900px 450px at 95% 10%, rgba(79,70,229,0.12), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+    }
+    .wrap{max-width:1280px;margin:0 auto;padding:22px 18px 48px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:14px 16px;border-radius:18px;
+      background: rgba(255,255,255,0.78);
+      border:1px solid rgba(230,232,239,0.9);
+      backdrop-filter: blur(12px);
+      position: sticky; top: 10px; z-index: 20;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-0.5px}
+    .brand-badge{
+      width:40px;height:40px;border-radius:14px;display:grid;place-items:center;color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 16px 30px rgba(79,70,229,0.25);
+      font-size:18px;
+    }
+    .nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      border:1px solid rgba(230,232,239,0.95);
+      background:#fff;
+      padding:10px 14px;border-radius:999px;font-weight:800;
+      cursor:pointer;color:var(--text);display:inline-flex;align-items:center;gap:8px;
+      text-decoration:none;transition:0.18s ease;white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(16,24,40,0.08)}
+    .btn-primary{
+      border:none;color:#fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary2));
+      box-shadow: 0 18px 35px rgba(79,70,229,0.22);
+    }
+    .btn-soft{background:#eef2ff;border-color:#e0e7ff;color:#3730a3}
+    .hero{padding:18px 0 6px}
+    .hero h1{margin:18px 0 6px;font-size:42px;letter-spacing:-1.2px;line-height:1.05}
+    .meta-row{
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+      flex-wrap:wrap;margin-top:10px;
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      background: rgba(255,255,255,0.75);
+      border:1px solid rgba(230,232,239,0.95);
+      padding:8px 12px;border-radius:999px;
+      font-weight:900;color:#3730a3;
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .card{
+      background: rgba(255,255,255,0.86);
+      border:1px solid rgba(230,232,239,0.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      position: relative;
+      overflow:hidden;
+      backdrop-filter: blur(12px);
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(700px 250px at 20% -10%, rgba(124,58,237,0.12), transparent 60%),
+                  radial-gradient(700px 250px at 90% -20%, rgba(79,70,229,0.12), transparent 60%);
+      pointer-events:none;
+    }
+    .inner{position:relative;display:flex;flex-direction:column;gap:8px}
+    .title{font-weight:900;letter-spacing:-0.3px;font-size:15px;line-height:1.25;margin:0}
+    .amount{font-weight:900;font-size:22px;color:#f59e0b;letter-spacing:-0.4px}
+    .row{color:var(--muted);font-size:13px}
+    .link{
+      width:100%;
+      text-align:center;
+      border:none;
+      border-radius: 14px;
+      padding: 11px 12px;
+      font-weight: 900;
+      cursor:pointer;
+      text-decoration:none;
+      color:#1d4ed8;
+      background:#eff6ff;
+      transition:0.18s ease;
+    }
+    .link:hover{filter:brightness(0.98);transform:translateY(-1px)}
+    .empty{
+      margin-top:16px;
+      padding:18px;
+      border-radius: 18px;
+      border: 1px dashed rgba(124,58,237,0.35);
+      background: rgba(255,255,255,0.65);
+      color:#334155;
+      font-weight:800;
+    }
+    @media(max-width:760px){
+      .hero h1{font-size:32px}
+      .nav{position:static}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-badge">🎓</div>
+        <div>ScholarFlow</div>
+      </div>
+      <div class="nav-right">
+        <a class="btn btn-soft" href="{{ url_for('dashboard') }}">← Dashboard</a>
+        <a class="btn btn-primary" href="{{ url_for('home') }}">🏠 Home</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>Your Scholarship Matches</h1>
+      <div class="meta-row">
+        <div class="pill">✨ {{ results|length }} Matches Found</div>
+      </div>
+    </div>
+
+    {% if results and results|length > 0 %}
+      <div class="grid">
+        {% for s in results %}
+          <div class="card">
+            <div class="inner">
+              <p class="title">{{ s.title }}</p>
+              <div class="amount">₹{{ "{:,.0f}".format((s.amount or 0)|float) }}</div>
+              <div class="row"><b>Deadline:</b> {{ s.deadline }}</div>
+              <div class="row"><b>Provider:</b> {{ s.provider }}</div>
+
+              <a class="link"
+                 href="{{ url_for('scholarship_detail', sch_id=s.id) }}?score={{ '%.1f'|format((s.score or 0)*100) }}">
+                ✨ View Details & Apply
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty">
+        <div style="font-size:18px;font-weight:900;margin-bottom:6px;">❌ No scholarship found</div>
+        <div style="color:#475569;font-weight:700;line-height:1.5;">
+          Try changing CGPA, income, category, state, course, or specialization and search again.
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</body>
+</html>
