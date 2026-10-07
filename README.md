@@ -1,2 +1,2 @@
 # Scholarship-Recommendation-System
-An NLP &amp; Machine Learning-based web application that provides personalized scholarship recommendations based on student profiles and eligibility criteria.
+Scholarship Recommendation System is an NLP and Machine Learning-based web application that helps students discover and identify scholarships based on their academic profile, eligibility criteria, financial background, and personal details. The system uses TF-IDF and Cosine Similarity to match student profiles with relevant scholarship opportunities and provide personalized recommendations.
